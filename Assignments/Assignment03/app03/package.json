@@ -1,0 +1,22 @@
+{
+  "name": "app03",
+  "version": "1.0.0",
+  "description": "School application",
+  "main": "app03.js",
+  "scripts": {
+    "start": "node app03.js",
+    "dev": "npx nodemon app03.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CS572",
+    "MWA",
+    "Assignment"
+  ],
+  "author": "Jargal Ganbaatar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  }
+}
