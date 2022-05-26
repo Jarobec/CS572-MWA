@@ -1,0 +1,23 @@
+{
+  "name": "app02",
+  "version": "1.0.0",
+  "description": "The assignment with mongodb",
+  "main": "app02.js",
+  "scripts": {
+    "start": "node app02.js",
+    "dev": "npx nodemon app02.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CS572",
+    "MWA",
+    "Assignment"
+  ],
+  "author": "Jargal Ganbaatar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongodb": "^4.6.0"
+  }
+}
