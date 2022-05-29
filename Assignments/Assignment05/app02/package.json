@@ -1,0 +1,22 @@
+{
+  "name": "app02",
+  "version": "1.0.0",
+  "description": "Create a headless application to work with SchoolDB. But now add courses as a sub-document to the student and add API for courses. (your API should only do getall and getOne). ",
+  "main": "app02.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CS572",
+    "MWA",
+    "Assignment"
+  ],
+  "author": "Jargal Ganbaatar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.4"
+  }
+}

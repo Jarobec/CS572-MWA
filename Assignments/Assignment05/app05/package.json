@@ -1,0 +1,22 @@
+{
+  "name": "app05",
+  "version": "1.0.0",
+  "description": "Add reviews (array of reviews) to a game. Again, different applications and a new controller for reviews. (review has name, review, date).",
+  "main": "app05.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CS572",
+    "MWA",
+    "Assignment"
+  ],
+  "author": "Jargal Ganbaatar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.4"
+  }
+}

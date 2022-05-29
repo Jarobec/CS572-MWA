@@ -1,0 +1,22 @@
+{
+  "name": "app04",
+  "version": "1.0.0",
+  "description": "Add publisher to the above point. Make sure you do this in a separate application. Operations related to the publisher should be in a separate controller. (publisher should have name, country).",
+  "main": "app04.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CS572",
+    "MWA",
+    "Assignment"
+  ],
+  "author": "Jargal Ganbaatar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.4"
+  }
+}

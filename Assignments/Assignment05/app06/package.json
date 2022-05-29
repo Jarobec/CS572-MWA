@@ -1,0 +1,22 @@
+{
+  "name": "app06",
+  "version": "1.0.0",
+  "description": "Create a headless application for your SchoolDB database. (You may, if you feel lazy, just have CRUD for the main document 'student').",
+  "main": "app06.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CS572",
+    "MWA",
+    "Assignment"
+  ],
+  "author": "Jargal Ganbaatar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.4"
+  }
+}
