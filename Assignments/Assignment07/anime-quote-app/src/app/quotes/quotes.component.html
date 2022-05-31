@@ -1,0 +1,10 @@
+<h3>10 random quotes</h3>
+
+<div *ngFor="let quote of quotes">
+  <blockquote>
+    <p>
+      <q> {{ quote.quote }}</q>
+    </p>
+    <footer>{{ quote.character }}, {{ quote.anime }}</footer>
+  </blockquote>
+</div>
