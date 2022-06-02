@@ -1,0 +1,13 @@
+<div class="student-detail">
+  <p>Json:</p>
+  {{ student | json }}
+  <hr />
+  <h3>{{ student.name | titlecase }}</h3>
+  <p>The student's GPA is [{{ student.gpa }}]</p>
+  <p>Courses:</p>
+  <ul>
+    <li *ngFor="let course of student.courses">
+      {{ course.name | uppercase }} - {{ course.block }}
+    </li>
+  </ul>
+</div>

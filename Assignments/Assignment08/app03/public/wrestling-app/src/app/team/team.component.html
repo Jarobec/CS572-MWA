@@ -1,0 +1,19 @@
+<div class="team-detail">
+  <h5>{{ team.name | uppercase }}</h5>
+  <hr />
+  <p>
+    Country: {{ team.country }} <app-flag [country]="team.country"></app-flag>
+  </p>
+  <p>Number of participation of olympics: {{ team.numOfPartInOlympic }}</p>
+  <p>Players list:</p>
+  <table class="table">
+    <tr>
+      <th>Player name</th>
+      <th>Player age</th>
+    </tr>
+    <tr *ngFor="let player of team.players">
+      <td>{{ player.name }}</td>
+      <td>{{ player.age }}</td>
+    </tr>
+  </table>
+</div>

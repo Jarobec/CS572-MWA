@@ -1,0 +1,13 @@
+<h3>
+  {{ game.title | uppercase }} -
+  <app-star-rating [rating]="game.rate"></app-star-rating>
+</h3>
+<div class="game-detail">
+  <p>Year: {{ game.year }}</p>
+  <p>
+    Price: {{ game.price | currency }}, {{ game.price * 3150 | currency: "₮" }}
+  </p>
+  <p>Minimum players: {{ game.minPlayers }}</p>
+  <p>Maximum players: {{ game.maxPlayers }}</p>
+  <p>Minimum age: {{ game.minAge }}</p>
+</div>
