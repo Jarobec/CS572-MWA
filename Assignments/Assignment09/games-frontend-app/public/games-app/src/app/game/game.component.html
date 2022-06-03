@@ -1,0 +1,9 @@
+<h5>{{ game.title }} - <stars-rating [rating]="game.rate"></stars-rating></h5>
+<p>Year: {{ game.year }}</p>
+<p>Price: {{ game.price }}</p>
+<p>Minimum players: {{ game.minPlayers }}</p>
+<p>Maximum players: {{ game.maxPlayers }}</p>
+<p>Minimum age: {{ game.minAge }}</p>
+<p>Designers: {{ game.designers }}</p>
+<hr />
+<button (click)="onDelete()">Delete game</button>

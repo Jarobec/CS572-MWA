@@ -1,0 +1,22 @@
+<form #gameAddForm="ngForm" (ngSubmit)="addGame(gameAddForm)">
+  <h4>Add new game</h4>
+  <div>
+    <label>Title: <input name="title" placeholder="title" ngModel /></label>
+  </div>
+  <div>
+    <label
+      >Rate: <input name="rate" type="number" placeholder="rate" ngModel
+    /></label>
+  </div>
+  <div>
+    <label
+      >Year: <input name="year" type="number" placeholder="year" ngModel
+    /></label>
+  </div>
+  <div>
+    <label
+      >Price: <input name="price" type="number" placeholder="price" ngModel
+    /></label>
+  </div>
+  <button type="submit">Save</button>
+</form>
