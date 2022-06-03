@@ -1,0 +1,22 @@
+{
+  "name": "app23",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app23.js",
+  "scripts": {
+    "start": "node app23.js",
+    "dev": "npx nodemon app23.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MWA",
+    "CS572",
+    "Lesson"
+  ],
+  "author": "Jargal Ganbaaatar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  }
+}

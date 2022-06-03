@@ -1,0 +1,8 @@
+<p>Our list of games are:</p>
+<ul>
+  <li *ngFor="let game of games">
+    <a routerLink="/games/{{ game._id }}"
+      >{{ game.title }} - <stars-rating [rating]="game.rate"></stars-rating
+    ></a>
+  </li>
+</ul>

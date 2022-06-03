@@ -1,0 +1,23 @@
+{
+  "name": "lesson4",
+  "version": "1.0.0",
+  "description": "MongoDB to connect Node",
+  "main": "app01.js",
+  "scripts": {
+    "dev": "npx nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CS572",
+    "MWA",
+    "Lesson"
+  ],
+  "author": "Jargal Ganbaatar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongodb": "^4.6.0",
+    "mongoose": "^6.3.4"
+  }
+}
