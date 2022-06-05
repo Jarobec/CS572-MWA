@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GameModel } from '../classes/game-model';
+import { PageModel } from '../classes/page-model';
 import { GamesDataService } from '../games-data.service';
 
 @Component({
@@ -9,11 +9,39 @@ import { GamesDataService } from '../games-data.service';
   styleUrls: ['./games.component.css'],
 })
 export class GamesComponent implements OnInit {
-  games: GameModel[] = [];
+  gamesWithPage!: PageModel;
+  search: string = '';
+  pageIndex: number = 0;
 
-  constructor(private gamesService: GamesDataService) {}
+  constructor(private gamesService: GamesDataService) {
+    this.gamesWithPage = new PageModel([], 0);
+  }
 
   ngOnInit(): void {
-    this.gamesService.getAll().subscribe((games) => (this.games = games));
+    this._getAll();
+  }
+
+  onSearch(): void {
+    this._getAll();
+  }
+
+  _getAll(): void {
+    this.gamesService
+      .getAll(this.search, this.pageIndex)
+      .subscribe((gamesWithPage) => (this.gamesWithPage = gamesWithPage));
+  }
+
+  onPrev(): void {
+    this.pageIndex -= 1;
+    this._getAll();
+  }
+  onNext(): void {
+    this.pageIndex += 1;
+    this._getAll();
+  }
+
+  onPage(page: number): void {
+    this.pageIndex = page;
+    this._getAll();
   }
 }

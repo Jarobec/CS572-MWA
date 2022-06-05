@@ -14,6 +14,9 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { GameComponent } from './game/game.component';
 import { GameAddComponent } from './game-add/game-add.component';
+import { GameEditComponent } from './game-edit/game-edit.component';
+import { GameAddEditComponent } from './game-add-edit/game-add-edit.component';
+import { PagingComponent } from './paging/paging.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { GameAddComponent } from './game-add/game-add.component';
     LoginComponent,
     GameComponent,
     GameAddComponent,
+    GameEditComponent,
+    GameAddEditComponent,
+    PagingComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,12 +46,16 @@ import { GameAddComponent } from './game-add/game-add.component';
         component: GamesComponent,
       },
       {
-        path: 'games/:gameId',
+        path: 'game/view/:gameId',
         component: GameComponent,
       },
       {
         path: 'game/add',
-        component: GameAddComponent,
+        component: GameAddEditComponent,
+      },
+      {
+        path: 'game/edit/:gameId',
+        component: GameAddEditComponent,
       },
       {
         path: 'register',

@@ -103,18 +103,40 @@ const _successGetAddUpdateDelete = function (status, game) {
   response.message = game;
 };
 
+const _successTotalPageSize = function (status, countDocuments) {
+  const games = response.message;
+  const totalPage = Math.ceil(countDocuments / count);
+
+  response.status = status;
+  response.message = { games: games, totalPage: totalPage };
+};
+
 const getAll = function (req, res) {
   if (!_checkCountAndOffset(req)) {
     _sendResponse(res);
   } else {
-    Game.find()
+    let query = {};
+
+    if (req.query && req.query.search) {
+      query = {
+        title: { $regex: ".*" + req.query.search + ".*", $options: "i" },
+      };
+    }
+
+    Game.find(query)
       .skip(offset)
       .limit(count)
       .exec()
       .then((games) => _successGetAddUpdateDelete(200, games))
+      .then(() => _getTotalPageSize(query))
+      .then((countDocuments) => _successTotalPageSize(200, countDocuments))
       .catch((err) => _serverError(err))
       .finally(() => _sendResponse(res));
   }
+};
+
+const _getTotalPageSize = function (query) {
+  return Game.countDocuments(query);
 };
 
 const getOne = function (req, res) {

@@ -1,4 +1,4 @@
-<form #gameAddForm="ngForm" (ngSubmit)="addGame(gameAddForm)">
+<form #gameAddForm="ngForm" (ngSubmit)="addGame()">
   <h4>Add new game</h4>
   <div>
     <label>Title: <input name="title" placeholder="title" ngModel /></label>
@@ -16,6 +16,32 @@
   <div>
     <label
       >Price: <input name="price" type="number" placeholder="price" ngModel
+    /></label>
+  </div>
+  <div>
+    <label
+      >Minimum players:
+      <input
+        name="minPlayers"
+        type="number"
+        placeholder="minimum players"
+        ngModel
+    /></label>
+  </div>
+  <div>
+    <label
+      >Maximum players:
+      <input
+        name="maxPlayers"
+        type="number"
+        placeholder="maximum players"
+        ngModel
+    /></label>
+  </div>
+  <div>
+    <label
+      >Minimum age:
+      <input name="minAge" type="number" placeholder="minimum age" ngModel
     /></label>
   </div>
   <button type="submit">Save</button>

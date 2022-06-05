@@ -1,9 +1,13 @@
-<h5>{{ game.title }} - <stars-rating [rating]="game.rate"></stars-rating></h5>
-<p>Year: {{ game.year }}</p>
-<p>Price: {{ game.price }}</p>
-<p>Minimum players: {{ game.minPlayers }}</p>
-<p>Maximum players: {{ game.maxPlayers }}</p>
-<p>Minimum age: {{ game.minAge }}</p>
-<p>Designers: {{ game.designers }}</p>
-<hr />
-<button (click)="onDelete()">Delete game</button>
+<div class="p-3">
+  <h5>{{ game.title }} - <stars-rating [rating]="game.rate"></stars-rating></h5>
+  <p>Year: {{ game.year }}</p>
+  <p>Price: {{ game.price }}</p>
+  <p>Minimum players: {{ game.minPlayers }}</p>
+  <p>Maximum players: {{ game.maxPlayers }}</p>
+  <p>Minimum age: {{ game.minAge }}</p>
+  <hr />
+  <button routerLink="/game/edit/{{ game._id }}" class="btn btn-info">
+    Edit game
+  </button>
+  <button (click)="deleteGame()" class="btn btn-danger">Delete game</button>
+</div>

@@ -1,0 +1,130 @@
+<form [formGroup]="gameForm" (ngSubmit)="saveGame()" class="p-3">
+  <h4>{{ headerLabel }}</h4>
+  <div>
+    <label
+      >Title:
+      <input
+        formControlName="title"
+        placeholder="title"
+        size="50"
+        required
+        class="form-control"
+    /></label>
+    <div *ngIf="title.invalid" class="ng-invalid">
+      <div *ngIf="title.errors?.['required']">
+        <small>Title is required.</small>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label
+      >Rate:
+      <input
+        formControlName="rate"
+        type="number"
+        placeholder="rate"
+        required
+        class="form-control"
+    /></label>
+    <div *ngIf="rate.invalid" class="ng-invalid">
+      <div *ngIf="rate.errors?.['required']">
+        <small>Rate is required.</small>
+      </div>
+      <div *ngIf="rate.errors?.['max'] || rate.errors?.['min']">
+        <small>Rate must be between 1 and 5.</small>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label
+      >Year:
+      <input
+        formControlName="year"
+        type="number"
+        placeholder="year"
+        required
+        class="form-control"
+    /></label>
+    <div *ngIf="year.invalid" class="ng-invalid">
+      <div *ngIf="year.errors?.['required']">
+        <small>Year is required.</small>
+      </div>
+      <div *ngIf="year.errors?.['max'] || year.errors?.['min']">
+        <small>Year must be between 1900 and 2022.</small>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label
+      >Price:
+      <input
+        formControlName="price"
+        type="number"
+        placeholder="price"
+        required
+        class="form-control"
+    /></label>
+    <div *ngIf="price.invalid" class="ng-invalid">
+      <div *ngIf="price.errors?.['required']">
+        <small>Price is required.</small>
+      </div>
+      <div *ngIf="price.errors?.['min']">
+        <small>Price must be greater than 1.</small>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label
+      >Minimum players:
+      <input
+        formControlName="minPlayers"
+        type="number"
+        placeholder="minimum players"
+        class="form-control"
+    /></label>
+    <div *ngIf="minPlayers.invalid" class="ng-invalid">
+      <div *ngIf="minPlayers.errors?.['min']">
+        <small>Minimum players must be greater than or equal to 1.</small>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label
+      >Maximum players:
+      <input
+        formControlName="maxPlayers"
+        type="number"
+        placeholder="maximum players"
+        class="form-control"
+    /></label>
+    <div *ngIf="maxPlayers.invalid" class="ng-invalid">
+      <div *ngIf="maxPlayers.errors?.['min']">
+        <small>Maximum players must be greater than or equal to 1.</small>
+      </div>
+    </div>
+    <div *ngIf="gameForm.errors?.['minMaxPlayersGap']" class="ng-invalid">
+      <small
+        >Maximum players must be greater than or equal to minimum
+        players.</small
+      >
+    </div>
+  </div>
+  <div>
+    <label
+      >Minimum age:
+      <input
+        formControlName="minAge"
+        type="number"
+        placeholder="minimum age"
+        class="form-control"
+    /></label>
+    <div *ngIf="minAge.invalid" class="ng-invalid">
+      <div *ngIf="minAge.errors?.['min']">
+        <small>Minimum age must be greater than or equal to 5.</small>
+      </div>
+    </div>
+  </div>
+  <button type="submit" [disabled]="!gameForm.valid" class="btn btn-success">
+    {{ buttonLabel }}
+  </button>
+</form>

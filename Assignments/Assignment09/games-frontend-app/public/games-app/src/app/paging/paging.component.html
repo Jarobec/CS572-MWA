@@ -1,0 +1,12 @@
+<div style="display: flex">
+  <div *ngFor="let number of pageNumbers; let i = index" style="padding: 3px">
+    <button
+      (click)="selectPage(i)"
+      [ngClass]="{
+        'button-page-active': i === activePageIndex
+      }"
+    >
+      {{ i + 1 }}
+    </button>
+  </div>
+</div>

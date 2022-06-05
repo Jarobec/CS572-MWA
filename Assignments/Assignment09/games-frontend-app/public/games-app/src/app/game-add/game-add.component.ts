@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { GamesDataService } from '../games-data.service';
 
 @Component({
@@ -10,12 +11,13 @@ import { GamesDataService } from '../games-data.service';
 export class GameAddComponent implements OnInit {
   @ViewChild('gameAddForm')
   gameAddForm!: NgForm;
-  constructor(private gameService: GamesDataService) {}
+
+  constructor(private router: Router, private gameService: GamesDataService) {}
 
   ngOnInit(): void {}
 
-  addGame(form: NgForm): void {
-    const a = this.gameService.addOne(form.value);
-    a.subscribe((a) => console.log(a));
+  addGame(): void {
+    const a = this.gameService.addOne(this.gameAddForm.value);
+    a.subscribe((a) => this.router.navigate(['games']));
   }
 }

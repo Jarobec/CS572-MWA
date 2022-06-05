@@ -1,8 +1,35 @@
-<h4>The list of games:</h4>
-<ul>
-  <li *ngFor="let game of games">
-    <a routerLink="/games/{{ game._id }}">{{ game.title }} </a>
-  </li>
-</ul>
-
-<button routerLink="/game/add">Add new game</button>
+<div class="p-3">
+  <h4>The list of games:</h4>
+  <button routerLink="/game/add">Add new game</button>
+  <hr />
+  <label
+    >Search:
+    <input
+      name="search"
+      placeholder="please enter title of game"
+      size="50"
+      class="form-control"
+      (input)="onSearch()"
+      [(ngModel)]="search"
+  /></label>
+  <hr />
+  <ul>
+    <li *ngFor="let game of gamesWithPage.games">
+      <a routerLink="/game/view/{{ game._id }}">{{ game.title }} </a>
+    </li>
+  </ul>
+  <app-paging
+    [createPages]="gamesWithPage.totalPage"
+    [pageIndex]="pageIndex"
+    (pageEvent)="onPage($event)"
+  ></app-paging>
+  <hr />
+  <label>Page number: {{ pageIndex + 1 }}</label>
+  <button [disabled]="pageIndex === 0" (click)="onPrev()">Prev</button>
+  <button
+    [disabled]="gamesWithPage.totalPage === pageIndex + 1"
+    (click)="onNext()"
+  >
+    Next
+  </button>
+</div>

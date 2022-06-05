@@ -8,14 +8,18 @@ export class GameModel {
   #maxPlayers!: number;
   #minAge!: number;
   #designers!: string;
+
+  constructor(id: string, title: string, price: number) {
+    this.#_id = id;
+    this.#title = title;
+    this.#price = price;
+  }
+
   get _id() {
     return this.#_id;
   }
   get title() {
     return this.#title;
-  }
-  set title(title: string) {
-    this.#title = title;
   }
   get year() {
     return this.#year;
@@ -41,9 +45,24 @@ export class GameModel {
   get designers() {
     return this.#designers;
   }
-  constructor(id: string, title: string, price: number) {
-    this.#_id = id;
-    this.#title = title;
-    this.#price = price;
-  }
+
+  // toString() {
+  //   return (
+  //     '{"title":"' +
+  //     this.title +
+  //     '","year":"' +
+  //     this.year +
+  //     '","rate":"' +
+  //     this.rate +
+  //     '","price":"' +
+  //     this.price +
+  //     '","minPlayers":"' +
+  //     this.minPlayers +
+  //     '","maxPlayers":"' +
+  //     this.maxPlayers +
+  //     '","minAge":"' +
+  //     this.minAge +
+  //     '"}'
+  //   );
+  // }
 }

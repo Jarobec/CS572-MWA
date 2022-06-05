@@ -1,0 +1,10 @@
+button {
+  border: #0f2537 1px solid;
+  padding: 5px 10px;
+}
+
+.button-page-active {
+  background-color: #0f2537;
+  color: #ffffff;
+  border: #ffffff 1px solid;
+}
