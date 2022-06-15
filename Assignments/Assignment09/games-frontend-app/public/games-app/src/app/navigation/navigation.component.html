@@ -1,5 +1,6 @@
 <nav>
   <button (click)="onHome()">Home</button>
   <button (click)="onGames()">Games</button>
-  <button routerLink="/register">Register</button>
+  <button *ngIf="!isLoggedIn" routerLink="/register">Register</button>
+  <button *ngIf="isLoggedIn" routerLink="/profile">Profile</button>
 </nav>

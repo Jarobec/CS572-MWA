@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +18,7 @@ import { GameAddComponent } from './game-add/game-add.component';
 import { GameEditComponent } from './game-edit/game-edit.component';
 import { GameAddEditComponent } from './game-add-edit/game-add-edit.component';
 import { PagingComponent } from './paging/paging.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { PagingComponent } from './paging/paging.component';
     GameEditComponent,
     GameAddEditComponent,
     PagingComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,9 +64,16 @@ import { PagingComponent } from './paging/paging.component';
         path: 'register',
         component: RegisterComponent,
       },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+      },
     ]),
   ],
-  providers: [],
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

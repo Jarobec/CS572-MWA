@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../authentication.service';
 
 import { PageModel } from '../classes/page-model';
 import { GamesDataService } from '../games-data.service';
@@ -13,7 +14,14 @@ export class GamesComponent implements OnInit {
   search: string = '';
   pageIndex: number = 0;
 
-  constructor(private gamesService: GamesDataService) {
+  get isLoggedIn() {
+    return this.authentication.isLogginIn;
+  }
+
+  constructor(
+    private gamesService: GamesDataService,
+    private authentication: AuthenticationService
+  ) {
     this.gamesWithPage = new PageModel([], 0);
   }
 

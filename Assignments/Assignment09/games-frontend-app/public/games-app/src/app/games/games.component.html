@@ -1,6 +1,8 @@
 <div class="p-3">
   <h4>The list of games:</h4>
-  <button routerLink="/game/add">Add new game</button>
+  <div *ngIf="isLoggedIn">
+    <button routerLink="/game/add">Add new game</button>
+  </div>
   <hr />
   <label
     >Search:

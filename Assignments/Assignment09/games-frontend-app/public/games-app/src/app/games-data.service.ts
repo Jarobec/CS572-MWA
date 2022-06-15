@@ -1,6 +1,7 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AuthenticationService } from './authentication.service';
 
 import { GameModel } from './classes/game-model';
 import { PageModel } from './classes/page-model';
@@ -11,7 +12,10 @@ import { PageModel } from './classes/page-model';
 export class GamesDataService {
   private baseUrl: string = 'http://localhost:1533/api';
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private authenticationService: AuthenticationService
+  ) {}
 
   public getAll(
     searchValue: string,
@@ -28,7 +32,12 @@ export class GamesDataService {
   }
 
   public getOne(gameId: string): Observable<GameModel> {
-    return this.http.get<GameModel>(this.baseUrl + '/games/' + gameId);
+    // intersepter
+    let tokenString: string = 'Bearer ' + this.authenticationService.token;
+    let headers = new HttpHeaders().set('Authorization', tokenString);
+    return this.http.get<GameModel>(this.baseUrl + '/games/' + gameId, {
+      headers,
+    });
   }
 
   public addOne(data: any): Observable<any> {

@@ -1,7 +1,7 @@
-<form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+<form *ngIf="!isLoggedIn" #loginForm="ngForm" (ngSubmit)="login()">
   <div>
     <label>
-      Username: <input name="name" placeholder="username" ngModel />
+      Username: <input name="username" placeholder="username" ngModel />
     </label>
   </div>
   <div>
@@ -12,3 +12,7 @@
   </div>
   <button type="submit">Login</button>
 </form>
+
+<div *ngIf="isLoggedIn">
+  Welcome {{ name }} <button (click)="logout()">Logout</button>
+</div>

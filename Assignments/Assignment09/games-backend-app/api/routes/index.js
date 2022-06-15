@@ -1,13 +1,10 @@
 const express = require("express");
-const router = express.Router();
-const gamesController = require("../controllers/games.controller");
+const gamesRoutes = require("./games");
+const usersRoutes = require("./users");
 
-router.route("/games").get(gamesController.getAll).post(gamesController.addOne);
-router
-  .route("/games/:gameId")
-  .get(gamesController.getOne)
-  .put(gamesController.fullUpdateOne)
-  .patch(gamesController.partialUpdateOne)
-  .delete(gamesController.deleteOne);
+const router = express.Router();
+
+router.use("/games", gamesRoutes);
+router.use("/users", usersRoutes);
 
 module.exports = router;
